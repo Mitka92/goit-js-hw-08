@@ -79,9 +79,8 @@ function imageTemplate({ preview, original, description }) {
 function imagesTemplate(arr) {
   return arr.map(imageTemplate).join("");
 }
-const markup = imagesTemplate(images);
 const ulElem = document.querySelector(".gallery");
-ulElem.innerHTML = markup;
+ulElem.innerHTML = imagesTemplate(images);
 ulElem.addEventListener("click", (e) => {
   e.preventDefault();
   if (e.target === e.currentTarget) return;
